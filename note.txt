@@ -1,0 +1,3 @@
+1. npm init -y
+2. npm express i mongoose morgan
+3. npm i -D nodemon // -D for nodemon
