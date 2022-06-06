@@ -15,6 +15,14 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
+app.get('/create', (req, res) => {
+    res.render('create');
+})
+
+// app.post('/create', (req, res) => {
+//     res.render('create');
+// })
+
 mongoose.connect('mongodb://localhost:27017/test')
 .then(() => {
     app.listen(4545, () => {
