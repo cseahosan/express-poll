@@ -4,14 +4,15 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+app.set('view engine', 'ejs')
+// app.set('views', 'templates') //default dir views
+
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.json({
-        message: 'I am root route'
-    })
+    res.render('home');
 })
 
 mongoose.connect('mongodb://localhost:27017/test')
