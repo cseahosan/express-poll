@@ -2,6 +2,8 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 
+const pollController = require('./pollController')
+
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -15,9 +17,8 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
-app.get('/create', (req, res) => {
-    res.render('create');
-})
+app.get('/create', pollController.createPollGetController)
+app.post('/create', pollController.createPollPostController)
 
 // app.post('/create', (req, res) => {
 //     res.render('create');

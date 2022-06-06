@@ -11,7 +11,10 @@ const pollSchema = new Schema({
         required: true,
         trim: true
     },
-    totalVote: Number,
+    totalVote: {
+        type: Number,
+        default: 0
+    },
     options: {
         type: [{
             name: String,
@@ -21,3 +24,5 @@ const pollSchema = new Schema({
 })
 
 const Poll = model('Poll', pollSchema)
+
+module.exports = Poll

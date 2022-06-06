@@ -30,10 +30,10 @@
                         <div id="options">
                             <p>Enter Your Options</p>
                             <div class="form-group">
-                                <input type="text" name="option1" class="form-control" placeholder="Option 1">
+                                <input type="text" name="options" class="form-control" placeholder="Option 1">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="option2" class="form-control" placeholder="Option 2">
+                                <input type="text" name="options" class="form-control" placeholder="Option 2">
                             </div>
                            
                         </div>
@@ -77,7 +77,7 @@
 
             let input = document.createElement('input')
             input.type = 'text';
-            input.name = 'option' + currentOptionNumber;
+            input.name = 'options';
             input.placeholder = 'Option '+currentOptionNumber ++
             input.className = 'form-control'
             div.appendChild(input)
