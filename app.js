@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.get('/create', pollController.createPollGetController)
 app.post('/create', pollController.createPollPostController)
+app.get('/polls', pollController.listPollPostController)
 
 // app.post('/create', (req, res) => {
 //     res.render('create');
