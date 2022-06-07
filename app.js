@@ -21,6 +21,7 @@ app.get('/create', pollController.createPollGetController)
 app.post('/create', pollController.createPollPostController)
 app.get('/polls', pollController.listPollController)
 app.get('/polls/:id', pollController.singlePollController)
+app.post('/polls/:id', pollController.singlePollPostController)
 
 // app.post('/create', (req, res) => {
 //     res.render('create');
