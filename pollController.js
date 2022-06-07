@@ -28,10 +28,21 @@ exports.createPollPostController = async (req, res, next) => {
     }
 }
 
-exports.listPollPostController = async(req, res, next) => {
+exports.listPollController = async(req, res, next) => {
     try{
         let polls = await Poll.find();
         res.render('polls', {polls})
+    }catch(e){
+        console.log(e)
+    }
+}
+
+exports.singlePollController = async(req, res, next) => {
+    let id= req.params.id;
+    try{
+        let poll = await Poll.findById(id);
+
+        res.render('show', {poll})
     }catch(e){
         console.log(e)
     }
