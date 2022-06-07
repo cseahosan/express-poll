@@ -21,7 +21,16 @@
                     <p>Description: <%= poll.description %></p>
 
                     <div class="my-3">
-                        Result
+                        <h5>Result: </h5>
+                        <ul>
+                            <% for(let r of result) { %>
+                                <ll>
+                                    <p><%= r.name %> ====> <strong>
+                                        <%= r.percentage.toFixed(2) %>%
+                                    </strong></p>
+                                </ll>
+                            <% } %>
+                        </ul>
                     </div>
 
                     <div class="my-4">

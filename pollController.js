@@ -41,8 +41,18 @@ exports.singlePollController = async(req, res, next) => {
     let id= req.params.id;
     try{
         let poll = await Poll.findById(id);
+        let options = [...poll.options];
+        let result = [];
+        options.forEach(option => {
+            let percentage = (option.vote * 100) / poll.totalVote
+            result.push({
+                ...option._doc,
+                percentage: percentage ? percentage : 0
+            })
+        })
+        console.log(result)
 
-        res.render('show', {poll})
+        res.render('show', {poll, result})
     }catch(e){
         console.log(e)
     }
@@ -69,3 +79,4 @@ exports.singlePollPostController = async (req, res, next) => {
         console.log(e)
     }
 }
+
